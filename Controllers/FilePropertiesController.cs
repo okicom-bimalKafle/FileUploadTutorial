@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -43,7 +43,7 @@ namespace FileUploadTutorial.Controllers
             {
                 return NotFound();
             }
-
+            fileProperty.FileContent=System.IO.File.ReadAllText(fileProperty.Path);
             return View(fileProperty);
         }
 

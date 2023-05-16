@@ -13,6 +13,8 @@ namespace FileUploadTutorial.Models
         public DateTime CreatedDateTime { get; set; }
         [NotMapped]
         public IFormFile Document { get; set; }
+        [NotMapped]
+        public string? FileContent { get; set; }
         
     }
 }
