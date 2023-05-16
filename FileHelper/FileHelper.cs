@@ -13,7 +13,7 @@ namespace FileUploadTutorial.FileHelper
 
         public async Task<string> UploadFileAsync(IFormFile browserFile, string folderPath)
         {
-            var fileName = $"{Guid.NewGuid().ToString()}.{browserFile.Name}";
+            var fileName = $"{Guid.NewGuid().ToString()}.{browserFile.FileName}";
             var folderDirectory = Path.Combine(Context.HttpContext.Request.PathBase, "wwwroot", folderPath);
             var filePath=Path.Combine(folderDirectory, fileName);
             using var stream = new FileStream(filePath, FileMode.Create);
